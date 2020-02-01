@@ -26,8 +26,8 @@ class ConvertControllerV1
                 'status' => 200,
                 'message' => 'success',
                 'data' => [
-                    'Mars Sol Date (MSD)' => $converter->getMarsSolDate(),
-                    'Martian Coordinated Time (MTC).' => $converter->getMartianCoordinatedTime(),
+                    'mars_sol_date' => $converter->getMarsSolDate(),
+                    'martian_coordinated_time' => $converter->getMartianCoordinatedTime(),
                 ],
             ]);
         } catch (\Exception $e) {
