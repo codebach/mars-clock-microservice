@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mars Clock Converter</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#convert").submit(function(event){
+                    event.preventDefault();
+
+                    var datetime = $("#datetime").val();
+
+                    $.ajax({
+                        url : "http://mars-clock.service/api/v1/convert",
+                        data: {datetime: datetime},
+                        type : "post",
+                        success : function(response){
+                            $("#results").html(JSON.stringify(response));
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Hello Martians</h1>
+        <h3>Let's convert earth time to mars time :)</h3>
+
+        <form action="" method="post" id="convert">
+            <div>
+                <label>Earth DateTime (UTC): </label>
+                <input type="text" id="datetime" placeholder="Y-m-d H:i:s">
+            </div>
+            <div>
+                <input type="submit" value="Convert">
+            </div>
+        </form>
+
+        <div id="results"></div>
+    </body>
+</html>
