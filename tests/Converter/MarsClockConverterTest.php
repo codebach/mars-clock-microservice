@@ -11,11 +11,11 @@ final class SearchEngineTest extends TestCase
     /**
      * @dataProvider dateDataProvider
      */
-    public function testConverter(string $eathDate, string $marsSoldDate, string $martianCoordinatedTime): void
+    public function testConverter(string $eatrhDate, string $marsSolDate, string $martianCoordinatedTime): void
     {
-        $converter = new MarsClockConverter(new \DateTime($eathDate));
+        $converter = new MarsClockConverter(new \DateTime($eatrhDate));
 
-        $this->assertEquals($marsSoldDate, $converter->getMarsSolDate());
+        $this->assertEquals($marsSolDate, $converter->getMarsSolDate());
         $this->assertEquals($martianCoordinatedTime, $converter->getMartianCoordinatedTime());
     }
 

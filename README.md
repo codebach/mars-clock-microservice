@@ -13,4 +13,13 @@ Start docker
 docker-compose up -d
 ```
 
+Install composer
+
+```
+docker-compose exec php bash
+```
+```
+composer install
+```
+
 Navigate to `http://mars-clock.service`
